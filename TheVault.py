@@ -3,11 +3,11 @@ import getpass
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 
-DB_FILE = r"a:\Daily Reports\Negative Balance\App\TheVault.db"
+DB_FILE = r""#my accounting drive
 
 def create_connection():
     try:
-        conn = sqlite3.connect(r"a:\Daily Reports\Negative Balance\App\TheVault.db")
+        conn = sqlite3.connect(r"" #my accounting drive)
         return conn
     except sqlite3.Error as e:
         print(e)
