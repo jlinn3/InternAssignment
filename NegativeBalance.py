@@ -102,9 +102,9 @@ def sharepoint_upload():
         print("File to be uploaded:", file_chart)
         # Get SharePoint credentials and links
         #My sharepoint sites!
-        sharepoint_url = 'https://hctx.sharepoint.com/sites/CM1-Budget'
-        daily_sp_relative_url = '/sites/CM1-Budget/Reports'
-        chart_sp_relative_url = '/sites/CM1-Budget/Reports/NegativeBalance'
+        sharepoint_url = ''#my dummy site
+        daily_sp_relative_url = '' #my dummy site
+        chart_sp_relative_url = '' #my dummy site
 
         # Initialize the client credentials
         username, password = read_credentials_from_database()
