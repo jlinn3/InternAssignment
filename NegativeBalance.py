@@ -16,7 +16,7 @@ def RefreshBalance():
         NegativeStart.Visible = True #makes excel visible
         
         #open negative balance workbook
-        NegativeBalance = NegativeStart.Workbooks.open(r"A:\Daily Reports\Negative Balance\App\NegBal.xlsm")
+        NegativeBalance = NegativeStart.Workbooks.open(r""#my excel file!)
         #Refresh just in case
         NegativeBalance.RefreshAll()
         
@@ -38,7 +38,7 @@ def RefreshBalance():
         #get date
         
         today_date = datetime.datetime.now().strftime("%m%d%Y")
-        outputFolder = r"a:\Daily Reports\Negative Balance\Daily Pivots"
+        outputFolder = r""#my destination
         outputFile = f"negative_balance_" + today_date + ".png"
         outputfilePath = os.path.join(outputFolder, outputFile)
         
@@ -56,8 +56,8 @@ def RefreshBalance():
     
 RefreshBalance()
 
-def read_credentials_from_database():
-    conn = sqlite3.connect(r"A:\Daily Reports\Negative Balance\App\TheVault.db")
+def read_credentials_from_database(): #this is where I link my password manager
+    conn = sqlite3.connect(r"")#this is where my passwords are
     cursor = conn.cursor()
     cursor.execute("SELECT username, password FROM passwords LIMIT 1")
     data = cursor.fetchone()
@@ -77,7 +77,7 @@ todaysDate()
 
 def sharepoint_upload():
     try:
-        folder_pivots = r'A:\Daily Reports\Negative Balance\Daily Pivots'
+        folder_pivots = r"" # my path to where my charts are located
         list_charts = glob.glob(os.path.join(folder_pivots, '*.png'))
         print("List of PNG files:", list_charts)
 
@@ -101,6 +101,7 @@ def sharepoint_upload():
         
         print("File to be uploaded:", file_chart)
         # Get SharePoint credentials and links
+        #My sharepoint sites!
         sharepoint_url = 'https://hctx.sharepoint.com/sites/CM1-Budget'
         daily_sp_relative_url = '/sites/CM1-Budget/Reports'
         chart_sp_relative_url = '/sites/CM1-Budget/Reports/NegativeBalance'
